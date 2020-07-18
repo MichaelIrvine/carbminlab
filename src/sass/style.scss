@@ -1,0 +1,42 @@
+/*!
+Theme Name: Carbminlab_Theme
+Theme URI: http://www.michaelirvinedesign.ca
+Author: Michael Irvine
+Author URI: http://www.michaelirvinedesign.ca
+Description: Custom theme for Carbminlab
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: carbminlab
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Carbmin is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+
+/*--------------------------------------------------------------
+----------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+@import 'variables/variables';
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import 'reset';
+
+/*--------------------------------------------------------------
+# a11ly
+--------------------------------------------------------------*/
+@import 'a11ly';
+
+/*--------------------------------------------------------------
+# Global Elements
+--------------------------------------------------------------*/
+@import 'global/global';
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import 'layout/layout';

@@ -1,0 +1,110 @@
+.site-header {
+  display: flex;
+  margin: 0.5rem 0rem 0;
+
+  .site-branding {
+    flex: 1;
+
+    .custom-logo-link {
+      display: inline-block;
+
+      img {
+        width: 135px;
+      }
+    }
+  }
+
+  .site-title {
+    padding: 1rem 0;
+    a {
+      color: $black;
+    }
+  }
+
+  .main-navigation {
+    @media (max-width: $desktopSmall) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1;
+    }
+
+    .menu-menu-1-container {
+      display: block;
+
+      @media (max-width: $desktopSmall) {
+        display: none;
+      }
+
+      #primary-menu {
+        display: flex;
+        list-style: none;
+        justify-content: flex-end;
+
+        @media screen and (max-width: 768px) {
+          justify-content: flex-start;
+          padding: 1rem 4rem 1rem 0rem;
+        }
+
+        .menu-item {
+          padding: 1rem 0rem 1rem 4rem;
+
+          @media screen and (max-width: 768px) {
+            padding: 1rem 4rem 1rem 0rem;
+          }
+          @media screen and (max-width: 550px) {
+            padding: 1rem 2rem 1rem 0rem;
+          }
+
+          a {
+            color: $black;
+            border-bottom: 1px solid transparent;
+
+            &:focus {
+              outline: 1px solid $black;
+            }
+
+            &:hover {
+              border-bottom: 1px solid $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+  height: 3rem;
+  width: 2rem;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 225ms ease-in-out;
+
+  &:hover {
+    background-color: #eeeeee;
+  }
+  &:focus {
+    outline: none;
+    background-color: #eeeeee;
+  }
+
+  @media (max-width: $desktopSmall) {
+    display: flex;
+  }
+
+  .primary-menu__icon {
+  }
+}
+
+.current_page_item {
+  a {
+    border-bottom: 1px solid $black !important;
+  }
+}
