@@ -1,76 +1,85 @@
 .site-header {
-  display: flex;
-  margin: 0.5rem 0rem 0;
+  .inner-header__container {
+    display: flex;
+    padding: 0rem 3rem;
+    border-bottom: 1px solid $lightgrey;
 
-  .site-branding {
-    flex: 1;
-
-    .custom-logo-link {
-      display: inline-block;
-
-      img {
-        width: 135px;
-      }
-    }
-  }
-
-  .site-title {
-    padding: 1rem 0;
-    a {
-      color: $black;
-    }
-  }
-
-  .main-navigation {
-    @media (max-width: $desktopSmall) {
+    .site-branding {
+      flex: 1;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      flex: 1;
+
+      .custom-logo-link {
+        display: inline-block;
+
+        img {
+          width: 135px;
+        }
+      }
     }
 
-    .menu-menu-1-container {
-      display: block;
+    .site-title {
+      padding: 1rem 0;
+      a {
+        color: $black;
+      }
+    }
 
+    .main-navigation {
       @media (max-width: $desktopSmall) {
-        display: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
       }
 
-      #primary-menu {
-        display: flex;
-        list-style: none;
-        justify-content: flex-end;
+      .menu-menu-1-container {
+        display: block;
 
-        @media screen and (max-width: 768px) {
-          justify-content: flex-start;
-          padding: 1rem 4rem 1rem 0rem;
+        @media (max-width: $desktopSmall) {
+          display: none;
         }
 
-        .menu-item {
-          padding: 1rem 0rem 1rem 4rem;
+        #primary-menu {
+          display: flex;
+          list-style: none;
+          justify-content: flex-end;
 
           @media screen and (max-width: 768px) {
+            justify-content: flex-start;
             padding: 1rem 4rem 1rem 0rem;
           }
-          @media screen and (max-width: 550px) {
-            padding: 1rem 2rem 1rem 0rem;
-          }
 
-          a {
-            color: $black;
-            border-bottom: 1px solid transparent;
+          .menu-item {
+            padding: 1rem 0rem 1rem 4rem;
 
-            &:focus {
-              outline: 1px solid $black;
+            @media screen and (max-width: 768px) {
+              padding: 1rem 4rem 1rem 0rem;
+            }
+            @media screen and (max-width: 550px) {
+              padding: 1rem 2rem 1rem 0rem;
             }
 
-            &:hover {
-              border-bottom: 1px solid $black;
+            a {
+              color: $black;
+              border-bottom: 1px solid transparent;
+
+              &:focus {
+                outline: 1px solid $black;
+              }
+
+              &:hover {
+                border-bottom: 1px solid $black;
+              }
             }
           }
         }
       }
     }
+  }
+
+  .search-bar__container {
+    margin-left: auto;
   }
 }
 
@@ -107,4 +116,9 @@
   a {
     border-bottom: 1px solid $black !important;
   }
+}
+
+// Fixed header styles
+.site-header.fixed {
+  position: fixed;
 }

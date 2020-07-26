@@ -129,11 +129,19 @@ add_action('after_setup_theme', 'carbminlab_theme_content_width', 0);
  */
 function carbminlab_theme_widgets_init()
 {
+	register_sidebar(array(
+		'name'          => 'Custom Header Widget Area',
+		'id'            => 'custom-header-widget',
+		'before_widget' => '<div class="header-widget-area">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="header-widget-title">',
+		'after_title'   => '</h2>',
+	));
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Footer Row 1', 'carbminlab-theme'),
-			'id'            => 'footer_row-1',
-			'description'   => esc_html__('Add widgets here for the Footer Row 1 section.', 'carbminlab-theme'),
+			'name'          => esc_html__('Footer Column 1', 'carbminlab-theme'),
+			'id'            => 'footer_column-1',
+			'description'   => esc_html__('Add widgets here for the Footer Column 1 section.', 'carbminlab-theme'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -142,9 +150,31 @@ function carbminlab_theme_widgets_init()
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Footer Row 2', 'carbminlab-theme'),
-			'id'            => 'footer_row-2',
-			'description'   => esc_html__('Add widgets here for the Footer Row 2 section.', 'carbminlab-theme'),
+			'name'          => esc_html__('Footer Column 2', 'carbminlab-theme'),
+			'id'            => 'footer_column-2',
+			'description'   => esc_html__('Add widgets here for the Footer Column 2 section.', 'carbminlab-theme'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Footer Column 3', 'carbminlab-theme'),
+			'id'            => 'footer_column-3',
+			'description'   => esc_html__('Add widgets here for the Footer Column 3 section.', 'carbminlab-theme'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Footer Sub Menu', 'carbminlab-theme'),
+			'id'            => 'footer_sub-menu',
+			'description'   => esc_html__('Add widgets here for the Privacy Policy and Terms & Conditions.', 'carbminlab-theme'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',

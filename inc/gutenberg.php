@@ -5,6 +5,27 @@
 *
 */
 
+
+function carbmin_block_categories($categories, $post)
+{
+  if ($post->post_type !== 'post') {
+    return $categories;
+  }
+  return array_merge(
+    $categories,
+    array(
+      array(
+        'slug' => 'carbmin-custom',
+        'title' => __('Carbmin Custom', 'carbmin-custom'),
+        'icon'  => 'dashicons-admin-site-alt3',
+      ),
+    )
+  );
+}
+add_filter('block_categories', 'carbmin_block_categories', 10, 2);
+
+
+
 function carbminlab_gutenberg_defaults()
 {
   // Disable some Gutenberg Features
@@ -50,14 +71,20 @@ add_action('init', 'carbminlab_gutenberg_defaults');
 function carbminlab_register_custom_blocks()
 {
   wp_register_script(
-    'carbminlab-custom-hero',
+    'carbminlab-custom-gutenberg',
     get_template_directory_uri() . '/build/gutenberg-bundle.js',
     array('wp-blocks', 'wp-block-editor', 'wp-components')
   );
   register_block_type(
     'carbminlab/custom-hero',
     array(
-      'editor_script' => 'carbminlab-custom-hero'
+      'editor_script' => 'carbminlab-custom-gutenberg'
+    )
+  );
+  register_block_type(
+    'carbminlab/two-column-hero',
+    array(
+      'editor_script' => 'carbminlab-custom-gutenberg'
     )
   );
 };

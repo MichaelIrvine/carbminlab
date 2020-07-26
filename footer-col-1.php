@@ -8,11 +8,11 @@
  * @package CarbminLab_Theme
  */
 
-if (!is_active_sidebar('footer_row-1')) {
-	return;
+if (!is_active_sidebar('footer_column-1')) {
+  return;
 }
 ?>
 
-<aside id="secondary" class="widget-area">
-  <?php dynamic_sidebar('footer_row-1'); ?>
-</aside><!-- #secondary -->
+<div id="footer-widget-area__col-1" class="footer-widget-area">
+  <?php dynamic_sidebar('footer_column-1'); ?>
+</div>

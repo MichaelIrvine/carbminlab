@@ -13,10 +13,18 @@
 ?>
 
 <footer id="footer" class="footer__wrapper">
-  <?php
-  require get_template_directory() . '/footer-row-1.php';
-  require get_template_directory() . '/footer-row-2.php';
-  ?>
+  <div class="footer__row-1">
+    <?php
+    require get_template_directory() . '/footer-col-1.php';
+    require get_template_directory() . '/footer-col-2.php';
+    require get_template_directory() . '/footer-col-3.php';
+    ?>
+  </div>
+  <div class="footer__row-2">
+    <?php
+    require get_template_directory() . '/footer-sub-menu.php';
+    ?>
+  </div>
 </footer>
 </div>
 
