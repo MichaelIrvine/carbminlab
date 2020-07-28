@@ -1,7 +1,15 @@
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+
   .inner-header__container {
     display: flex;
+
     padding: 0rem 3rem;
+    background-color: white;
     border-bottom: 1px solid $lightgrey;
 
     .site-branding {
@@ -13,7 +21,7 @@
         display: inline-block;
 
         img {
-          width: 135px;
+          width: 208px;
         }
       }
     }
@@ -38,6 +46,11 @@
 
         @media (max-width: $desktopSmall) {
           display: none;
+        }
+
+        // Display on menu toggle for small screens
+        &.menu-active {
+          display: block;
         }
 
         #primary-menu {
@@ -65,11 +78,11 @@
               border-bottom: 1px solid transparent;
 
               &:focus {
-                outline: 1px solid $black;
+                outline: 1px dotted $black;
               }
 
               &:hover {
-                border-bottom: 1px solid $black;
+                border-bottom: 1px dotted $black;
               }
             }
           }
@@ -78,8 +91,122 @@
     }
   }
 
-  .search-bar__container {
-    margin-left: auto;
+  // Header Search Bar
+  .header-search-widget__container {
+    display: flex;
+    height: 3rem;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+
+    .search-icon__container {
+      height: 40px;
+      margin-top: -10px;
+
+      #open-search-bar {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border: 1px solid #e2e2e2;
+        border-top: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+
+        &:focus {
+          outline: none;
+          background-color: $lightgrey;
+        }
+      }
+
+      svg {
+        pointer-events: none;
+      }
+    }
+
+    .header-widget-area {
+      height: 48px;
+      width: 100%;
+      margin-top: -1px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background-color: white;
+      display: none;
+      opacity: 0;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid #e2e2e2;
+      border-bottom: 1px solid $lightgrey;
+      transition: opacity 50ms ease-in-out;
+
+      &.is-active {
+        display: flex;
+      }
+
+      &.is-visible {
+        opacity: 1;
+      }
+
+      .search-form {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+        .search-field {
+          -webkit-appearance: none;
+          border: 0;
+          border-bottom: 1px solid $lightgrey;
+          background-color: white;
+          padding: 0.5rem;
+          font-weight: 100;
+          font-size: 0.75rem;
+          width: 35%;
+          transition: border-color 350ms ease;
+
+          &:focus {
+            outline: 0;
+            border-bottom: 1px solid $darkblue;
+          }
+        }
+
+        .search-submit {
+          padding: 0.5rem 1.5rem;
+          border-radius: 0;
+          border: 1px solid white;
+          color: white;
+          background-color: $darkblue;
+          cursor: pointer;
+          font-weight: 100;
+          font-size: 0.8rem;
+
+          &:focus {
+            outline: 0;
+            background-color: white;
+            color: $darkblue;
+            border: 1px solid $darkblue;
+          }
+        }
+      }
+
+      #close-search-bar {
+        width: 2.5rem;
+        background-color: white;
+        border: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        &:focus {
+          outline: none;
+          background-color: $lightgrey;
+        }
+      }
+    }
   }
 }
 
@@ -107,18 +234,10 @@
   @media (max-width: $desktopSmall) {
     display: flex;
   }
-
-  .primary-menu__icon {
-  }
 }
 
 .current_page_item {
   a {
-    border-bottom: 1px solid $black !important;
+    border-bottom: 1px solid $lightblue !important;
   }
-}
-
-// Fixed header styles
-.site-header.fixed {
-  position: fixed;
 }
