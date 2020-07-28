@@ -12,7 +12,7 @@
   word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 
   &:focus {
-    border: 1px solid black;
+    outline: 1px dotted black;
     background-color: white;
     border-radius: 0;
     box-shadow: 0;

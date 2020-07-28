@@ -57,7 +57,7 @@
         </div>
 
         <nav id="site-navigation" class="main-navigation">
-          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-pressed="false">
             <svg class="primary-menu__icon" focusable="false" viewBox="0 0 20 20" width="20" height="18">
               <rect y="1" width="20" height="3"></rect>
               <rect y="8" width="20" height="3"></rect>
@@ -72,12 +72,9 @@
             )
           );
           ?>
-        </nav>
-      </div>
-      <div class="header-search-widget__container">
-        <div class="search-icon__container">
-          <button id="open-search-bar" class="open-search-button btn" aria-label="Open Search Bar" aria-pressed="false">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" width="24px">
+          <button id="open-search-bar" class="open-search-button btn" aria-label="Open Search Bar" aria-pressed="false"
+            aria-disabled="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" width="16px">
               <path
                 d="M68.1 40.8C68.1 27.2 57 16 43.3 16c-13.7 0-24.8 11.1-24.8 24.8 0 13.7 11.1 24.8 24.8 24.8 13.7 0 24.8-11.1 24.8-24.8z"
                 fill="none" />
@@ -85,8 +82,9 @@
                 d="M72.5 63.1c4.7-6.2 7.6-13.9 7.6-22.3C80.1 20.5 63.6 4 43.3 4 23 4 6.5 20.5 6.5 40.8S23 77.6 43.3 77.6c7.6 0 14.6-2.3 20.5-6.3l22.9 22.9c1.2 1.2 2.7 1.8 4.2 1.8s3.1-.6 4.2-1.8c2.3-2.3 2.3-6.1 0-8.5L72.5 63.1zm-54-22.3C18.5 27.2 29.6 16 43.3 16 57 16 68.1 27.2 68.1 40.8c0 13.7-11.1 24.8-24.8 24.8-13.7 0-24.8-11.1-24.8-24.8z" />
             </svg>
           </button>
-        </div>
-
+        </nav>
+      </div>
+      <div class="header-search-widget__container">
         <?php
         if (is_active_sidebar('custom-header-widget')) : ?>
         <?php dynamic_sidebar('custom-header-widget'); ?>

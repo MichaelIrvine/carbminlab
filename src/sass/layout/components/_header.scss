@@ -7,7 +7,6 @@
 
   .inner-header__container {
     display: flex;
-
     padding: 0rem 3rem;
     background-color: white;
     border-bottom: 1px solid $lightgrey;
@@ -22,6 +21,7 @@
 
         img {
           width: 208px;
+          min-width: 208px;
         }
       }
     }
@@ -34,6 +34,8 @@
     }
 
     .main-navigation {
+      display: flex;
+
       @media (max-width: $desktopSmall) {
         display: flex;
         align-items: center;
@@ -42,18 +44,7 @@
       }
 
       .menu-menu-1-container {
-        display: block;
-
-        @media (max-width: $desktopSmall) {
-          display: none;
-        }
-
-        // Display on menu toggle for small screens
-        &.menu-active {
-          display: block;
-        }
-
-        #primary-menu {
+        .nav-menu {
           display: flex;
           list-style: none;
           justify-content: flex-end;
@@ -63,15 +54,29 @@
             padding: 1rem 4rem 1rem 0rem;
           }
 
-          .menu-item {
-            padding: 1rem 0rem 1rem 4rem;
+          @media (max-width: $desktopSmall) {
+            display: none;
+            position: absolute;
+            top: 111px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background-color: white;
+            border: 1px solid #e2e2e2;
+            z-index: 9999;
+          }
 
-            @media screen and (max-width: 768px) {
-              padding: 1rem 4rem 1rem 0rem;
+          // Display on menu toggle for small screens
+          &.menu-active {
+            display: flex;
+
+            @media (min-width: $desktopSmall) {
+              display: none;
             }
-            @media screen and (max-width: 550px) {
-              padding: 1rem 2rem 1rem 0rem;
-            }
+          }
+
+          .menu-item {
+            padding: 1rem 0rem 1rem 1.5rem;
 
             a {
               color: $black;
@@ -82,41 +87,22 @@
               }
 
               &:hover {
-                border-bottom: 1px dotted $black;
+                opacity: 0.4;
               }
             }
           }
         }
       }
-    }
-  }
-
-  // Header Search Bar
-  .header-search-widget__container {
-    display: flex;
-    height: 3rem;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-
-    .search-icon__container {
-      height: 40px;
-      margin-top: -10px;
 
       #open-search-bar {
-        width: 40px;
-        height: 40px;
         background-color: white;
-        border: 1px solid #e2e2e2;
-        border-top: 1px solid white;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0;
+        padding: 10px;
 
         &:focus {
-          outline: none;
-          background-color: $lightgrey;
+          outline: 1px dotted $black;
         }
       }
 
@@ -124,9 +110,17 @@
         pointer-events: none;
       }
     }
+  }
+
+  // Header Search Bar
+  .header-search-widget__container {
+    display: flex;
+    height: auto;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
 
     .header-widget-area {
-      height: 48px;
       width: 100%;
       margin-top: -1px;
       position: absolute;
@@ -141,19 +135,16 @@
       align-items: center;
       border-top: 1px solid #e2e2e2;
       border-bottom: 1px solid $lightgrey;
-      transition: opacity 50ms ease-in-out;
+      transition: opacity 100ms ease-in-out;
 
       &.is-active {
         display: flex;
-      }
-
-      &.is-visible {
         opacity: 1;
       }
 
       .search-form {
         width: 100%;
-        margin: 0 auto;
+        margin: 0.5rem auto;
         text-align: center;
 
         .search-field {
@@ -191,21 +182,6 @@
           }
         }
       }
-
-      #close-search-bar {
-        width: 2.5rem;
-        background-color: white;
-        border: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-
-        &:focus {
-          outline: none;
-          background-color: $lightgrey;
-        }
-      }
     }
   }
 }
@@ -214,21 +190,18 @@
   display: none;
   height: 3rem;
   width: 2rem;
-  border-radius: 50px;
   justify-content: center;
   align-items: center;
   padding: 0;
   justify-content: center;
   align-items: center;
 
-  transition: background-color 225ms ease-in-out;
+  &:focus {
+    outline: 1px dotted $black;
+  }
 
   &:hover {
-    background-color: #eeeeee;
-  }
-  &:focus {
-    outline: none;
-    background-color: #eeeeee;
+    opacity: 0.4;
   }
 
   @media (max-width: $desktopSmall) {
@@ -240,4 +213,8 @@
   a {
     border-bottom: 1px solid $lightblue !important;
   }
+}
+
+.site-header *:focus {
+  outline: 1px dotted $black;
 }

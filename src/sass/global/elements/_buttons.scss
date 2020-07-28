@@ -1,0 +1,14 @@
+button {
+  &:hover {
+    opacity: 0.4;
+  }
+}
+
+[aria-pressed='true'] {
+  opacity: 0.4;
+}
+
+[aria-disabled='true'] {
+  background-color: $lightblue;
+  pointer-events: none;
+}

@@ -134,12 +134,7 @@ function carbminlab_theme_widgets_init()
 		'id'            => 'custom-header-widget',
 		'description'   => esc_html__('Search Bar for Header. Do not remove.', 'carbminlab-theme'),
 		'before_widget' => '<div class="header-widget-area" role="complementary">',
-		'after_widget'  => '<button id="close-search-bar" class="close-search-button btn" aria-label="Close Search Bar" aria-pressed="false">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 125" width="24px">
-			<path
-				d="M63.484 55l39.758-39.757a5.998 5.998 0 000-8.485 5.999 5.999 0 00-8.484 0L55 46.515 15.243 6.757a6 6 0 00-8.485 8.485L46.515 55 6.757 94.758A5.999 5.999 0 0011 105a5.98 5.98 0 004.243-1.758L55 63.484l39.758 39.758C95.929 104.414 97.465 105 99 105s3.071-.586 4.242-1.758a5.997 5.997 0 000-8.484L63.484 55z" />
-			</svg>
-	</button></div>',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="header-widget-title">',
 		'after_title'   => '</h2>',
 	));
