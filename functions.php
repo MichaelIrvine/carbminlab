@@ -192,7 +192,8 @@ function carbminlab_theme_scripts()
 {
 	wp_enqueue_style('main-styles', get_template_directory_uri() . '/build/main.css', array(), get_the_time(), false);
 
-	wp_enqueue_script('main-js', get_template_directory_uri() . '/build/main-bundle.js', array(), _S_VERSION, true);
+	wp_enqueue_script('main-js', get_template_directory_uri() . '/build/main-bundle.js', array(), get_the_time(), true);
+
 
 	wp_style_add_data('carbminlab-theme-style', 'rtl', 'replace');
 

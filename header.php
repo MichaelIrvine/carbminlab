@@ -56,7 +56,19 @@
           <?php endif; ?>
         </div>
 
-        <nav id="site-navigation" class="main-navigation">
+        <nav id="site-navigation" class="main-navigation" role="navigation"
+          aria-label="<?php _e('Main Menu', 'textdomain'); ?>">
+          <?php
+          if (has_nav_menu('main-menu')) {
+            wp_nav_menu(array(
+              'theme_location' => 'main-menu',
+              'container'      => false,
+              'menu_class'     => 'main-navigation',
+              'walker'         => new Aria_Walker_Nav_Menu(),
+              'items_wrap'     => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
+            ));
+          }
+          ?>
           <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-pressed="false">
             <svg class="primary-menu__icon" focusable="false" viewBox="0 0 20 20" width="20" height="18">
               <rect y="1" width="20" height="3"></rect>

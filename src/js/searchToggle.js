@@ -5,6 +5,13 @@ const searchToggle = () => {
   // toggle search bar
   openSearchBar.addEventListener('click', () => {
     searchBar.classList.toggle('is-active');
+
+    // Toggle ARIA Pressed attribute
+    if (openSearchBar.getAttribute('aria-pressed') === 'true') {
+      openSearchBar.setAttribute('aria-pressed', 'false');
+    } else {
+      openSearchBar.setAttribute('aria-pressed', 'true');
+    }
   });
 };
 

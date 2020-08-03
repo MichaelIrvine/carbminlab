@@ -9,6 +9,6 @@ button {
 }
 
 [aria-disabled='true'] {
-  background-color: $lightblue;
+  opacity: 0.4;
   pointer-events: none;
 }
