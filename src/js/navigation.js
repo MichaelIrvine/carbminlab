@@ -6,6 +6,8 @@
  */
 (function () {
   const siteNavigation = document.getElementById('site-navigation');
+  const searchBar = document.querySelector('.header-widget-area');
+  const openSearchBar = document.querySelector('#open-search-bar');
 
   // Return early if the navigation don't exist.
   if (!siteNavigation) {
@@ -34,8 +36,6 @@
   // Toggle the .toggled class and the aria-expanded value each time the button is clicked.
   button.addEventListener('click', function () {
     siteNavigation.classList.toggle('toggled');
-    const searchBar = document.querySelector('.header-widget-area');
-    const openSearchBar = document.querySelector('#open-search-bar');
 
     // Toggle aria expanded
     if (button.getAttribute('aria-expanded') === 'true') {
@@ -53,10 +53,8 @@
       openSearchBar.disabled = true;
     }
 
-    // toggle search bar
+    // display search bar
     searchBar.classList.toggle('is-active');
-    // toggle menu
-    menu.classList.toggle('menu-active');
   });
 
   // Toggle ARIA Pressed attribute
@@ -69,11 +67,40 @@
 
   // Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
   document.addEventListener('click', function (event) {
-    const isClickInside = siteNavigation.contains(event.target);
+    const isClickInsideNav = siteNavigation.contains(event.target);
+    const isClickInsideSearch = searchBar.contains(event.target);
 
-    if (!isClickInside) {
+    if (
+      !isClickInsideNav &&
+      !isClickInsideSearch &&
+      siteNavigation.classList.contains('toggled')
+    ) {
       siteNavigation.classList.remove('toggled');
       button.setAttribute('aria-expanded', 'false');
+      // hide search bar
+      searchBar.classList.remove('is-active');
+
+      // ARIA
+      // Toggle aria expanded
+      if (button.getAttribute('aria-expanded') === 'true') {
+        button.setAttribute('aria-expanded', 'false');
+      } else {
+        button.setAttribute('aria-expanded', 'true');
+      }
+      // Toggle aria pressed
+      if (button.getAttribute('aria-pressed') === 'true') {
+        button.setAttribute('aria-pressed', 'false');
+      } else {
+        button.setAttribute('aria-pressed', 'true');
+      }
+      // Toggle aria disabled
+      if (openSearchBar.getAttribute('aria-disabled') === 'true') {
+        openSearchBar.setAttribute('aria-disabled', 'false');
+        openSearchBar.disabled = false;
+      } else {
+        openSearchBar.setAttribute('aria-disabled', 'true');
+        openSearchBar.disabled = true;
+      }
     }
   });
 

@@ -30,7 +30,7 @@
     <a class="skip-link screen-reader-text"
       href="#primary"><?php esc_html_e('Skip to content', 'carbminlab-theme'); ?></a>
 
-    <header id="masthead" class="site-header">
+    <header id="masthead" class="site-header fixed">
       <div class="inner-header__container">
         <div class="site-branding">
           <?php
@@ -56,24 +56,12 @@
           <?php endif; ?>
         </div>
 
-        <nav id="site-navigation" class="main-navigation" role="navigation"
-          aria-label="<?php _e('Main Menu', 'textdomain'); ?>">
-          <?php
-          if (has_nav_menu('main-menu')) {
-            wp_nav_menu(array(
-              'theme_location' => 'main-menu',
-              'container'      => false,
-              'menu_class'     => 'main-navigation',
-              'walker'         => new Aria_Walker_Nav_Menu(),
-              'items_wrap'     => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
-            ));
-          }
-          ?>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
           <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-pressed="false">
             <svg class="primary-menu__icon" focusable="false" viewBox="0 0 20 20" width="20" height="18">
-              <rect y="1" width="20" height="3"></rect>
-              <rect y="8" width="20" height="3"></rect>
-              <rect y="15" width="20" height="3"></rect>
+              <rect y="1" width="20" height="2"></rect>
+              <rect y="8" width="20" height="2"></rect>
+              <rect y="15" width="20" height="2"></rect>
             </svg>
           </button>
           <?php

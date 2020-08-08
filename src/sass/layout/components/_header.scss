@@ -1,10 +1,4 @@
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-
   p,
   a {
     font-size: 15px;
@@ -15,6 +9,10 @@
     padding: 0rem 3rem;
     background-color: white;
     border-bottom: 1px solid $lightgrey;
+
+    @media (max-width: $tablet) {
+      padding: 0rem 2rem;
+    }
 
     .site-branding {
       flex: 1;
@@ -61,24 +59,19 @@
         }
 
         @media (max-width: $desktopSmall) {
-          display: none;
+          // display: none;
+          visibility: hidden;
+          opacity: 0;
           position: absolute;
-          top: 111px;
+          height: auto;
           left: 0;
           right: 0;
           width: 100%;
           background-color: white;
           border: 1px solid #e2e2e2;
           z-index: 9999;
-        }
-
-        // Display on menu toggle for small screens
-        &.menu-active {
-          display: flex;
-          flex-direction: column;
-          @media (min-width: $desktopSmall) {
-            display: none;
-          }
+          padding: 2rem;
+          transition: opacity 300ms ease-in-out;
         }
 
         .menu-item {
@@ -119,6 +112,17 @@
         pointer-events: none;
       }
     }
+
+    // Toggle for Smaller Screen Menu and Search bar
+    #site-navigation.toggled .nav-menu {
+      display: flex;
+      flex-direction: column;
+      visibility: visible;
+      opacity: 1;
+      @media (min-width: $desktopSmall) {
+        display: none;
+      }
+    }
   }
 
   // Header Search Bar
@@ -138,16 +142,17 @@
       right: 0;
       z-index: 999;
       background-color: white;
-      display: none;
+      visibility: hidden;
+      display: flex;
       opacity: 0;
       justify-content: center;
       align-items: center;
       border-top: 1px solid #e2e2e2;
       border-bottom: 1px solid $lightgrey;
-      transition: opacity 100ms ease-in-out;
+      transition: opacity 300ms ease-in-out;
 
       &.is-active {
-        display: flex;
+        visibility: visible;
         opacity: 1;
       }
 
@@ -175,13 +180,20 @@
 
         .search-submit {
           padding: 0.5rem 1.5rem;
-          border-radius: 0;
+          border-radius: 50px;
           border: 1px solid white;
           color: white;
-          background-color: $darkblue;
+          background-color: $lightblue;
           cursor: pointer;
           font-weight: 100;
           font-size: 0.8rem;
+
+          &:hover {
+            outline: 0;
+            background-color: white;
+            color: $darkblue;
+            border: 1px solid $darkblue;
+          }
 
           &:focus {
             outline: 0;
@@ -193,6 +205,14 @@
       }
     }
   }
+}
+
+.site-header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 .menu-toggle {
@@ -218,10 +238,8 @@
   }
 }
 
-.current_page_item {
-  a {
-    border-bottom: 1px solid $lightblue !important;
-  }
+.current-menu-item > a {
+  border-bottom: 1px solid $lightblue !important;
 }
 
 .site-header *:focus {
@@ -237,6 +255,9 @@
 
 .menu-item-has-children {
   position: relative;
+  @media (max-width: $desktopSmall) {
+    flex-direction: column;
+  }
 
   &:hover {
     .sub-menu {
@@ -245,13 +266,28 @@
   }
 }
 
-.sub-menu {
+ul.sub-menu {
   display: none;
   position: absolute;
-  top: 57px;
   white-space: nowrap;
   background-color: white;
   border: 1px solid #e2e2e2;
+  border-top: 1px solid white;
+  z-index: 9999;
+  flex-direction: column;
+  // padding: 0.25rem 0;
+
+  @media (max-width: $desktopSmall) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    border: 0;
+  }
+}
+
+.sub-menu .menu-item {
+  padding: 0.5rem 0;
 }
 
 .sub-menu.sub-menu__open {
@@ -266,4 +302,8 @@
   border-right: 4px solid transparent;
   border-top: 4px solid #000000;
   margin-left: 0.5rem;
+
+  @media (max-width: $desktopSmall) {
+    display: none;
+  }
 }

@@ -1,0 +1,35 @@
+.archive-page__news {
+  min-height: 100vh;
+  padding-top: 5rem;
+
+  // Filter
+  .categories-filter__container {
+    .categories-filter__list {
+      display: flex;
+      flex-direction: column;
+
+      .category-filter__item {
+        margin: 0.25rem;
+        a {
+          opacity: 0.35;
+          color: white;
+          font-size: 0.85rem;
+          cursor: pointer;
+          background-color: $lightblue;
+          border: 1px solid $lightblue;
+          border-radius: 15px;
+          padding: 0.25rem 1rem;
+          transition: opacity 300ms ease-in-out;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        a.current-active-category {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
