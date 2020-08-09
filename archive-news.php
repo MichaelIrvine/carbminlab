@@ -13,6 +13,7 @@ get_header();
 
 <main id="primary" class="site-main archive-page__news">
 
+
   <div class="categories-filter__container">
     <h4>Filter</h4>
     <ul class="categories-filter__list">
@@ -54,7 +55,7 @@ get_header();
     <div class="article__container">
       <div class="article__container__row-1">
         <h2><?php the_title(); ?></h2>
-        <div class="post-meta__container">
+        <div class="post-details__container">
           <span class="post-category"><?php the_category(', '); ?></span>
           <span class="post-date"><?= get_the_date(); ?></span>
         </div>
