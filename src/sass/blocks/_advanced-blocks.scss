@@ -1,0 +1,23 @@
+.wp-block-advgb-columns.advgb-columns-wrapper {
+  @include customPadding;
+
+  .advgb-columns-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid $lightgrey;
+  }
+}
+
+.wp-block-advgb-columns.advgb-columns-wrapper.no-bottom-border {
+  .advgb-columns-container {
+    border: none;
+  }
+}
+
+.wp-block-advgb-columns.advgb-columns-wrapper.border-top-bottom {
+  .advgb-columns-container {
+    border: 1px solid $darkblue;
+    border-left: none;
+    border-right: none;
+  }
+}

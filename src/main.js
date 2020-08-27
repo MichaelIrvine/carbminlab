@@ -5,9 +5,9 @@ import './js/navigation';
 import searchToggle from './js/searchToggle';
 
 // Accessible dropdown menu
-import accessDropDown from './js/accessDropDown';
+import accessibleDropDown from './js/accessDropDown';
 import fixedHeader from './js/fixedHeader';
 
 searchToggle();
-accessDropDown();
+accessibleDropDown();
 fixedHeader();

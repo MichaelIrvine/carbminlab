@@ -1,7 +1,5 @@
 .archive-page__news {
-  min-height: 100vh;
-  padding-top: 5rem;
-
+  @include customPadding;
   // Filter
   .categories-filter__container {
     .categories-filter__list {
@@ -13,7 +11,7 @@
         a {
           opacity: 0.35;
           color: white;
-          font-size: 0.75rem;
+          font-size: 1rem;
           cursor: pointer;
           background-color: $lightblue;
           border: 1px solid $lightblue;

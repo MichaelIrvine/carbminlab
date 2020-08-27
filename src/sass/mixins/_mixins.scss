@@ -1,0 +1,21 @@
+// Global Padding Mixin
+@mixin customPadding {
+  padding: $paddingLarge;
+
+  @media (max-width: $tablet) {
+    padding: $paddingMed;
+  }
+  @media (max-width: $mobileMed) {
+    padding: $paddingSmall;
+  }
+}
+@mixin customMargin {
+  margin: $marginLarge;
+
+  @media (max-width: $tablet) {
+    margin: $marginMed;
+  }
+  @media (max-width: $mobileMed) {
+    margin: $marginSmall;
+  }
+}

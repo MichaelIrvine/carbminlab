@@ -1,1 +1,47 @@
+.wp-block-carbminlab-custom-hero {
+  // Background image
+  position: relative;
+  min-height: calc(100vh - 3.25rem);
+  min-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
+  @include customPadding;
+
+  .full-screen-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: calc(100vh - 3.25rem);
+    min-width: 100%;
+  }
+
+  .full-screen-hero__text-container {
+    width: 50%;
+    min-height: calc(100vh - 3.25rem);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+
+    .full-screen-hero__icon-container {
+      margin-bottom: 2rem;
+      width: 100%;
+
+      img {
+        max-width: 400px;
+      }
+    }
+  }
+  // Deal with Z-indexing
+  * {
+    position: relative;
+    z-index: 1;
+  }
+}

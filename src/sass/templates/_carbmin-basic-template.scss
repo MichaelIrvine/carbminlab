@@ -1,0 +1,18 @@
+.page-title__container {
+  position: relative;
+  height: 30vh;
+  width: 100%;
+  @include customPadding;
+
+  .page-title__inner-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100%;
+    z-index: 99;
+
+    .page-title__column-one {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

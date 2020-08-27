@@ -249,3 +249,24 @@ require get_template_directory() . '/inc/gutenberg.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+// Dequeue Post Block Front End Style Sheet
+function carbmin_disable_scripts_styles()
+{
+	wp_dequeue_style('ptam-style-css');
+	wp_dequeue_style('ptam-style-css-editor');
+}
+add_action('wp_enqueue_scripts', 'carbmin_disable_scripts_styles', 100);
+
+add_image_size('people-image-size', 250, 250);
+add_image_size('two-column-image-size', 425, 425);
+
+add_filter('image_size_names_choose', 'carbminlab_custom_image_sizes');
+
+function carbminlab_custom_image_sizes($sizes)
+{
+	return array_merge($sizes, array(
+		'two-column-image-size' => __('Column Image')
+	));
+}

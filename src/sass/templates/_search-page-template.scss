@@ -1,0 +1,15 @@
+.search-main {
+  margin-top: 4rem;
+  @include customPadding;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .entry-title {
+    margin-top: 3rem;
+    a {
+      font-size: inherit;
+    }
+  }
+}

@@ -35,28 +35,28 @@ get_header();
 </div>
 <main id="primary" class="site-main template__hero-sidebar">
   <?php if (have_rows('hst_sidebar_menu')) : ?>
-  <aside class="sidebar--jump-links__container">
-    <h4>On This Page:</h4>
-    <ul class="hst_sidebar_menu">
-      <?php while (have_rows('hst_sidebar_menu')) : the_row();
-					$linkTitle = get_sub_field('hst_sidebar_menu_item');
-					$linkUrl = get_sub_field('hst_sidebar_menu_item_link');
-				?>
-      <li>
-        <a href="<?php echo $linkUrl; ?>"><?php echo $linkTitle; ?></a>
-      </li>
-      <?php endwhile; ?>
-    </ul>
-  </aside>
+    <aside class="sidebar--jump-links__container">
+      <h4 class="hst_sidebar-header">On This Page:</h4>
+      <ul class="hst_sidebar_menu">
+        <?php while (have_rows('hst_sidebar_menu')) : the_row();
+          $linkTitle = get_sub_field('hst_sidebar_menu_item');
+          $linkUrl = get_sub_field('hst_sidebar_menu_item_link');
+        ?>
+          <li>
+            <a href="<?php echo $linkUrl; ?>"><?php echo $linkTitle; ?></a>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+    </aside>
   <?php endif; ?>
 
   <section class="hero-sidebar__main-content">
     <?php
-		while (have_posts()) : ?>
+    while (have_posts()) : ?>
     <?php the_post();
-			the_content();
-		endwhile; // End of the loop.
-		?>
+      the_content();
+    endwhile; // End of the loop.
+    ?>
   </section>
 </main><!-- #main -->
 

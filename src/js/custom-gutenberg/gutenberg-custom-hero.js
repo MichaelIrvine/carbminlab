@@ -20,7 +20,7 @@ registerBlockType('carbminlab/custom-hero', {
     heading: {
       type: 'string',
       source: 'html',
-      selector: 'h2',
+      selector: 'h1',
     },
     headingColor: {
       type: 'string',
@@ -29,7 +29,7 @@ registerBlockType('carbminlab/custom-hero', {
     text: {
       type: 'string',
       source: 'html',
-      selector: 'h3',
+      selector: 'h2',
     },
     textColor: {
       type: 'string',
@@ -174,18 +174,18 @@ registerBlockType('carbminlab/custom-hero', {
             <img src={headerIcon} />
           </div>
           <RichText
-            className='full-screen-hero__heading'
+            className='full-screen-hero__heading no-decor'
             key='editable'
-            tagName='h2'
+            tagName='h1'
             placeholder='Hero Heading'
             value={heading}
             onChange={onChangeHeading}
             style={{ color: headingColor }}
           />
           <RichText
-            className='full-screen-hero__text'
+            className='full-screen-hero__text no-decor'
             key='editable'
-            tagName='h3'
+            tagName='h2'
             placeholder='Hero Paragraph'
             value={text}
             onChange={onChangeText}
@@ -223,14 +223,14 @@ registerBlockType('carbminlab/custom-hero', {
             <img src={headerIcon} />
           </div>
           <RichText.Content
-            className='full-screen-hero__heading'
-            tagName='h2'
+            className='full-screen-hero__heading no-decor'
+            tagName='h1'
             value={heading}
             style={{ color: headingColor }}
           />
           <RichText.Content
-            className='full-screen-hero__text'
-            tagName='h3'
+            className='full-screen-hero__text no-decor'
+            tagName='h2'
             value={text}
             style={{ color: textColor }}
           />

@@ -1,0 +1,45 @@
+.single-news {
+  article.news {
+    margin-left: 25%;
+    margin-top: 4rem;
+
+    h1 {
+      font-size: 2rem;
+
+      &:after {
+        content: '';
+        height: 1px;
+        width: 5rem;
+        display: block;
+        background-color: $darkblue;
+        margin-top: 2rem;
+
+        @media (max-width: $mobileLarge) {
+          margin: 2rem auto 0;
+        }
+      }
+    }
+
+    .post-thumbnail {
+      img {
+        max-width: 425px;
+      }
+    }
+
+    .entry-content {
+      max-width: 80%;
+    }
+  }
+
+  .post-navigation {
+    @include customPadding;
+
+    a {
+      font-weight: 400;
+
+      &:hover {
+        opacity: 0.4;
+      }
+    }
+  }
+}

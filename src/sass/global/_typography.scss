@@ -11,7 +11,7 @@ html {
 h1 {
   font-size: 4rem;
   font-family: $h1, 'Arial', 'Helvetica', sans-serif;
-  color: #000000;
+  color: $darkblue;
   letter-spacing: 1px;
   line-height: 1.35;
 
@@ -23,21 +23,57 @@ h1 {
 h2 {
   font-size: 2rem;
   font-family: $h2, 'Arial', 'Helvetica', sans-serif;
-  color: #000000;
+  color: $darkblue;
   letter-spacing: 1px;
   line-height: 1.35;
+  margin-bottom: 2rem;
 
   @media (max-width: $mobileLarge) {
+    font-size: 1.75rem;
   }
 }
 
-h3,
-h4,
-h5,
-h6 {
-  font-size: 1.5rem;
+h2 {
+  &:after {
+    content: '';
+    height: 1px;
+    width: 5rem;
+    display: block;
+    background-color: $darkblue;
+    margin-top: 2rem;
+
+    @media (max-width: $mobileLarge) {
+      margin: 2rem auto 0;
+    }
+  }
+}
+
+h2.no-decor,
+h3.no-decor {
+  &:after {
+    display: none;
+  }
+}
+
+h3 {
+  font-size: 1.75rem;
   font-family: $h3, 'Arial', 'Helvetica', sans-serif;
-  color: #000000;
+  font-weight: 100;
+  color: $lightblue;
+  letter-spacing: 1px;
+  line-height: 1.35;
+
+  margin-bottom: 2rem;
+
+  @media (max-width: $mobileLarge) {
+    font-size: 1.25rem;
+  }
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-family: $h3, 'Arial', 'Helvetica', sans-serif;
+  color: $darkblue;
   letter-spacing: 1px;
   line-height: 1.35;
 }
@@ -46,33 +82,25 @@ p {
   font-size: 1.15rem;
   font-weight: 100;
   font-family: $bodyCopy, 'Arial', 'Helvetica', sans-serif;
-  color: #000000;
+  color: $darkblue;
   letter-spacing: 0.5px;
   line-height: 1.35;
-  font-weight: 100;
+  margin: 1rem 0 2rem 0;
+
+  @media (max-width: $mobileLarge) {
+    font-size: 1rem;
+  }
 }
 
 p.emphasis {
-  font-size: 1.15rem;
-  font-weight: 100;
-  font-family: $bodyCopy, 'Arial', 'Helvetica', sans-serif;
   font-style: italic;
-  color: #000000;
-  letter-spacing: 0.5px;
-  line-height: 1.35;
-}
-
-span {
-  font-size: 1.15rem;
-  letter-spacing: 0.5px;
-  line-height: 1.35;
 }
 
 a {
   font-size: 1rem;
   font-weight: 100;
   font-family: $bodyCopy, 'Arial', 'Helvetica', sans-serif;
-  color: #000000;
+  color: $darkblue;
   letter-spacing: 0.5px;
   line-height: 1.35;
   text-decoration: none;

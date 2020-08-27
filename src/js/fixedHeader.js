@@ -10,7 +10,7 @@ const fixedHeader = () => {
     let smallScreenMenuPos = headerHeight + searchBarHeight;
 
     // Adjust body top padding to account for Fixed Header
-    // document.body.style.paddingTop = `${headerHeight}px`;
+    document.body.style.paddingTop = `${headerHeight}px`;
     // Top position for menu on small screens
     smallScreenMenu.style.top = `${smallScreenMenuPos}px`;
     // Top position for Sub Menu on larger screens

@@ -45,6 +45,21 @@ function carbminlab_gutenberg_defaults()
         'slug' => 'black',
         'color' => '#000000'
       ),
+      array(
+        'name' => 'Light Blue',
+        'slug' => 'light-blue',
+        'color' => '#00A8E1'
+      ),
+      array(
+        'name' => 'Dark Blue',
+        'slug' => 'dark-blue',
+        'color' => '#00053E'
+      ),
+      array(
+        'name' => 'Light Grey',
+        'slug' => 'light-grey',
+        'color' => '#e2e2e2'
+      ),
     )
   );
   // Default Font Sizes
