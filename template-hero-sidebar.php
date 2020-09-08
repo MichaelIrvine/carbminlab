@@ -29,25 +29,38 @@ get_header();
     </div>
     <div class="half-screen-hero__column-two">
 
+      <?php
+      $icon = get_field('hst_column_2_icon');
+      $icon_desc = get_field('hst_column_2_icon_desc');
+      if (!empty($icon)) : ?>
+      <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+      <?php endif; ?>
+
+      <?php
+      if (!empty($icon_desc)) : ?>
+      <?php echo $icon_desc; ?>
+      <?php endif; ?>
     </div>
   </div>
 
 </div>
-<main id="primary" class="site-main template__hero-sidebar">
+<main id="primary" class="site-main template__hero-sidebar
+<?php if (!have_rows('hst_sidebar_menu')) : ?> no-sidebar <?php endif; ?>
+">
   <?php if (have_rows('hst_sidebar_menu')) : ?>
-    <aside class="sidebar--jump-links__container">
-      <h4 class="hst_sidebar-header">On This Page:</h4>
-      <ul class="hst_sidebar_menu">
-        <?php while (have_rows('hst_sidebar_menu')) : the_row();
+  <aside class="sidebar--jump-links__container">
+    <h4 class="hst_sidebar-header">On This Page:</h4>
+    <ul class="hst_sidebar_menu">
+      <?php while (have_rows('hst_sidebar_menu')) : the_row();
           $linkTitle = get_sub_field('hst_sidebar_menu_item');
           $linkUrl = get_sub_field('hst_sidebar_menu_item_link');
         ?>
-          <li>
-            <a href="<?php echo $linkUrl; ?>"><?php echo $linkTitle; ?></a>
-          </li>
-        <?php endwhile; ?>
-      </ul>
-    </aside>
+      <li>
+        <a href="<?php echo $linkUrl; ?>"><?php echo $linkTitle; ?></a>
+      </li>
+      <?php endwhile; ?>
+    </ul>
+  </aside>
   <?php endif; ?>
 
   <section class="hero-sidebar__main-content">

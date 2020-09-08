@@ -191,19 +191,20 @@ add_action('widgets_init', 'carbminlab_theme_widgets_init');
 function carbminlab_theme_scripts()
 {
 	wp_enqueue_style('main-styles', get_template_directory_uri() . '/build/main.css', array(), get_the_time(), false);
+	wp_enqueue_style('swiper-styles', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css', array(), get_the_time(), false);
+	wp_enqueue_script('swiper-script', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js', array(), get_the_time(), true);
 
 	wp_enqueue_script('main-js', get_template_directory_uri() . '/build/main-bundle.js', array(), get_the_time(), true);
-
+	wp_enqueue_script('swiper-js', get_template_directory_uri() . '/build/swiper.js', array(), get_the_time(), true);
 
 	wp_style_add_data('carbminlab-theme-style', 'rtl', 'replace');
-
-	// wp_enqueue_script( 'carbminlab-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
 }
 add_action('wp_enqueue_scripts', 'carbminlab_theme_scripts');
+
 
 /**
  * Custom Category / taxonomy filter
@@ -270,3 +271,25 @@ function carbminlab_custom_image_sizes($sizes)
 		'two-column-image-size' => __('Column Image')
 	));
 }
+
+// Remove Menu Items from Dashboard
+
+function remove_menus()
+{
+	remove_menu_page('edit-comments.php');
+}
+add_action('admin_menu', 'remove_menus');
+
+
+function carbmin_op_init()
+{
+	if (function_exists('acf_add_options_page')) {
+		acf_add_options_sub_page(array(
+			'page_title'      => 'News Archive Settings',
+			'parent_slug'     => 'edit.php?post_type=news',
+			'capability' => 'manage_options'
+		));
+	}
+}
+
+add_action('acf/init', 'carbmin_op_init');

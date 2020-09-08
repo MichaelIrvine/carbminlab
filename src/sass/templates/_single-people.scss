@@ -1,0 +1,44 @@
+.team-member-page {
+  @include customPadding;
+  margin-top: 3rem;
+
+  .team-member__container {
+    display: flex;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+
+    .team-member_img__container {
+      margin-right: 4rem;
+
+      img {
+        min-width: 275px;
+
+        @media (max-width: $tablet) {
+          max-width: 175px;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+
+    .team-member_info__container {
+      h1,
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        padding-right: 15%;
+
+        @media (max-width: $tablet) {
+          padding-right: 10%;
+        }
+      }
+
+      ul li {
+        list-style: disc;
+      }
+    }
+  }
+}

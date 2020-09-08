@@ -11,20 +11,26 @@
 get_header();
 ?>
 
+<div class="half-screen-hero__container">
+  <div class="half-screen-hero__image"
+    style="background-image: url(<?php echo the_field('hst-hero-image', 'option') ?>)"></div>
+  <div class="half-screen-hero__overlay" style="background-color: <?php echo the_field('hst_hero_overlay_color', 'option') ?>; 
+			 				opacity: <?php echo the_field('hst_hero_overlay_opacity', 'option'); ?>"></div>
 
-<div class="page-title__container">
-  <div class="page-title__inner-container">
-    <div class="page-title__column-one">
+  <div class="half-screen-hero__inner-container">
+    <div class="half-screen-hero__column-one">
       <h1>
         <?php echo post_type_archive_title(); ?>
       </h1>
     </div>
   </div>
+
 </div>
 
 <main id="primary" class="site-main archive-page__news">
   <div class="categories-filter__container">
     <h2>Filter</h2>
+    <?php echo the_field('news_archive_filter_desc', 'option'); ?>
     <ul class="categories-filter__list">
       <li class="category-filter__item"><a class="current-active-category" href="<?php echo home_url('news') ?>">All
           News</a>
@@ -64,18 +70,23 @@ get_header();
 
     <div class="article__container">
       <div class="article__container__row-1">
-        <h2><?php the_title(); ?></h2>
+        <h3><?php the_title(); ?></h3>
         <div class="post-details__container">
           <span class="post-category"><?php the_category(', '); ?></span>
           <span class="post-date"><?= get_the_date(); ?></span>
         </div>
       </div>
       <div class="article-container__row-2">
+
         <?php
           the_post_thumbnail('medium');
-          the_excerpt();
           ?>
-        <a href="<?= the_permalink(); ?>" class="news-post-cta">Read More</a>
+        <div class="article-link__container">
+          <?php the_excerpt(); ?>
+          <a href="<?= the_permalink(); ?>" class="news-post-cta btn --outline">Read More</a>
+        </div>
+
+
       </div>
     </div>
 

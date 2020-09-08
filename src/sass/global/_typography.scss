@@ -9,15 +9,15 @@ html {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: $h1, 'Arial', 'Helvetica', sans-serif;
   color: $darkblue;
   letter-spacing: 1px;
   line-height: 1.35;
 
-  @media (min-width: $desktopLarge) {
-    font-size: 3rem;
-  }
+  // @media (min-width: $desktopLarge) {
+  //   font-size: 3rem;
+  // }
 }
 
 h2 {
@@ -57,9 +57,9 @@ h3.no-decor {
 
 h3 {
   font-size: 1.75rem;
-  font-family: $h3, 'Arial', 'Helvetica', sans-serif;
+  font-family: $h2, 'Arial', 'Helvetica', sans-serif;
   font-weight: 100;
-  color: $lightblue;
+  color: $darkblue;
   letter-spacing: 1px;
   line-height: 1.35;
 
@@ -72,7 +72,7 @@ h3 {
 
 h4 {
   font-size: 1.25rem;
-  font-family: $h3, 'Arial', 'Helvetica', sans-serif;
+  font-family: $h2, 'Arial', 'Helvetica', sans-serif;
   color: $darkblue;
   letter-spacing: 1px;
   line-height: 1.35;
@@ -112,4 +112,8 @@ sup {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.has-light-blue-color {
+  color: $lightblue;
 }

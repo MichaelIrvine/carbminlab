@@ -28,18 +28,26 @@
 
     .entry-content {
       max-width: 80%;
+
+      a {
+        border-radius: 50px;
+        padding: 0.25rem 0.75rem;
+        border: 1px solid;
+        white-space: nowrap;
+        color: $darkblue;
+        background-color: white;
+        border-color: $darkblue;
+
+        &:hover {
+          background-color: $darkblue;
+          border-color: $darkblue;
+          color: white;
+        }
+      }
     }
   }
 
   .post-navigation {
     @include customPadding;
-
-    a {
-      font-weight: 400;
-
-      &:hover {
-        opacity: 0.4;
-      }
-    }
   }
 }

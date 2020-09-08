@@ -73,7 +73,7 @@
             )
           );
           ?>
-          <button id="open-search-bar" class="open-search-button btn" aria-label="Open Search Bar" aria-pressed="false"
+          <button id="open-search-bar" class="open-search-button" aria-label="Open Search Bar" aria-pressed="false"
             aria-disabled="false">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" width="16px">
               <path

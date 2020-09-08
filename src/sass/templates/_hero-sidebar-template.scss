@@ -43,6 +43,17 @@
       display: flex;
       align-items: center;
     }
+    .half-screen-hero__column-two {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-width: 225px;
+        margin: 2rem;
+      }
+    }
   }
 }
 
@@ -64,4 +75,8 @@
       margin-bottom: 0.5rem;
     }
   }
+}
+
+.template__hero-sidebar.no-sidebar {
+  grid-template-columns: 1fr;
 }

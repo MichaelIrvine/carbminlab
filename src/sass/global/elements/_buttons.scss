@@ -12,3 +12,50 @@ button {
   opacity: 0.4;
   pointer-events: none;
 }
+
+.btn {
+  border-radius: 50px;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.--light-blue {
+  background-color: $lightblue;
+  border-color: $lightblue;
+
+  &:hover {
+    opacity: 0.35;
+  }
+}
+
+.--outline {
+  background-color: white;
+  border-color: $darkblue;
+
+  &:hover {
+    background-color: $darkblue;
+    border-color: $darkblue;
+    color: white;
+  }
+}
+
+p.btn > a {
+  display: inline;
+
+  border-radius: 50px;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid;
+  white-space: nowrap;
+  color: white;
+}
+
+p.--light-blue > a {
+  background-color: $lightblue;
+  border-color: $lightblue;
+
+  &:hover {
+    background-color: white;
+    color: $lightblue;
+  }
+}

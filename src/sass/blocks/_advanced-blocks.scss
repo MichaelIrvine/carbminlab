@@ -2,10 +2,27 @@
   @include customPadding;
 
   .advgb-columns-container {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     border-bottom: 1px solid $lightgrey;
   }
+}
+
+.wp-block-advgb-columns.advgb-columns-wrapper.has-solid-background {
+  background-color: $darkblue;
+  border: none;
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  a {
+    color: white;
+  }
+}
+
+.wp-block-advgb-columns.advgb-columns-wrapper.has-solid-background h2:after {
+  background-color: white;
 }
 
 .wp-block-advgb-columns.advgb-columns-wrapper.no-bottom-border {
