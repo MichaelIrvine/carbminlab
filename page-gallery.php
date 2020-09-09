@@ -24,7 +24,7 @@ get_header();
 								opacity: <?php echo the_field('hst_hero_overlay_opacity'); ?>"></div>
   <div class="half-screen-hero__inner-container">
     <div class="half-screen-hero__column-one">
-      <h1>
+      <h1 class="<?php if (!empty(get_field('hst-hero-image'))) : ?>light-color<?php endif; ?>">
         <?php echo the_title(); ?>
       </h1>
     </div>
@@ -33,18 +33,18 @@ get_header();
 <main id="primary" class="site-main gallery-page">
 
   <?php
-	while (have_posts()) :
-		the_post();
+  while (have_posts()) :
+    the_post();
 
-		the_content();
+    the_content();
 
-	endwhile; // End of the loop.
-	?>
+  endwhile; // End of the loop.
+  ?>
 
   <?php
-	$images = get_field('gallery');
+  $images = get_field('gallery');
 
-	if ($images) : ?>
+  if ($images) : ?>
   <div class="swiper-container">
     <div class="swiper-wrapper">
 

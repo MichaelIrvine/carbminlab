@@ -1,53 +1,103 @@
-.single-news {
-  article.news {
-    margin-left: 25%;
-    margin-top: 4rem;
+.single-news-page {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 
-    h1 {
-      font-size: 2rem;
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
 
-      &:after {
-        content: '';
-        height: 1px;
-        width: 5rem;
-        display: block;
-        background-color: $darkblue;
-        margin-top: 2rem;
+  section {
+    article.news {
+      @include customPadding;
+      margin-top: 4rem;
+      border-left: 1px solid $lightgrey;
 
-        @media (max-width: $mobileLarge) {
-          margin: 2rem auto 0;
-        }
+      @media (max-width: $tablet) {
+        border: 0;
       }
-    }
 
-    .post-thumbnail {
-      img {
-        max-width: 425px;
-      }
-    }
+      h1 {
+        font-size: 2rem;
 
-    .entry-content {
-      max-width: 80%;
-
-      a {
-        border-radius: 50px;
-        padding: 0.25rem 0.75rem;
-        border: 1px solid;
-        white-space: nowrap;
-        color: $darkblue;
-        background-color: white;
-        border-color: $darkblue;
-
-        &:hover {
+        &:after {
+          content: '';
+          height: 1px;
+          width: 5rem;
+          display: block;
           background-color: $darkblue;
+          margin-top: 2rem;
+        }
+      }
+
+      .post-thumbnail {
+        float: left;
+        margin-right: 2rem;
+
+        @media (max-width: $desktopSmall) {
+          float: none;
+          clear: both;
+        }
+
+        img {
+          max-width: 325px;
+        }
+      }
+
+      .entry-content {
+        a {
+          border-radius: 50px;
+          padding: 0.25rem 0.75rem;
+          border: 1px solid;
+          white-space: nowrap;
+          color: $darkblue;
+          background-color: white;
           border-color: $darkblue;
-          color: white;
+
+          &:hover {
+            background-color: $darkblue;
+            border-color: $darkblue;
+            color: white;
+          }
         }
       }
     }
   }
 
-  .post-navigation {
+  aside {
+    margin-top: 4rem;
     @include customPadding;
+
+    @media (max-width: $tablet) {
+      margin-top: 2rem;
+      border-bottom: 1px solid $lightgrey;
+      padding-bottom: 2rem;
+    }
+
+    h4 {
+      padding: 0.45rem 0;
+      margin-bottom: 1rem;
+      text-decoration: underline;
+    }
+
+    .post-navigation {
+      @media (max-width: $mobileLarge) {
+        display: flex;
+      }
+      .nav-previous {
+        margin-bottom: 1rem;
+      }
+
+      .nav-subtitle {
+        font-weight: 400;
+      }
+    }
   }
+}
+
+.nav-previous:hover .nav-title {
+  color: $lightblue;
+}
+
+.nav-next:hover .nav-title {
+  color: $lightblue;
 }

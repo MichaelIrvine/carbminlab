@@ -41,10 +41,6 @@ h2 {
     display: block;
     background-color: $darkblue;
     margin-top: 2rem;
-
-    @media (max-width: $mobileLarge) {
-      margin: 2rem auto 0;
-    }
   }
 }
 

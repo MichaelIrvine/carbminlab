@@ -5,6 +5,11 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid $lightgrey;
+
+    @media (max-width: $mobileLarge) {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
   }
 }
 

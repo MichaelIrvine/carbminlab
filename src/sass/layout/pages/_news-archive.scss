@@ -7,11 +7,22 @@
     padding: 2rem;
     border-bottom: 1px solid $darkblue;
 
+    @media (max-width: $mobileLarge) {
+      padding: 2rem 0;
+    }
+
     .categories-filter__list {
       display: flex;
       justify-content: center;
 
+      @media (max-width: $mobileLarge) {
+        flex-direction: column;
+      }
+
       .category-filter__item {
+        @media (max-width: $mobileLarge) {
+          margin: 0.5rem;
+        }
         margin: 1rem;
         a {
           opacity: 1;
@@ -51,7 +62,11 @@
         display: flex;
         flex-direction: column;
 
-        h3 {
+        @media (max-width: $mobileLarge) {
+          padding: 0;
+        }
+
+        h2:hover {
           color: $lightblue;
         }
 
@@ -59,21 +74,26 @@
           display: flex;
           justify-content: flex-start;
 
-          .post-category {
+          @media (max-width: $mobileLarge) {
+            flex-direction: column;
+          }
+
+          .post-category a {
             margin-right: 1rem;
             font-size: 0.75rem;
             background-color: #00a8e1;
             padding: 0.25rem 1rem;
             border-radius: 16px;
-
-            a {
-              color: white !important;
-            }
+            color: white !important;
           }
 
           .post-date {
             color: $lightblue;
             padding: 0.25rem 0.75rem;
+
+            @media (max-width: $mobileLarge) {
+              padding: 0.25rem 0;
+            }
           }
         }
       }
@@ -81,8 +101,18 @@
         display: flex;
         padding: 0rem 2rem 4rem;
 
+        @media (max-width: $mobileLarge) {
+          flex-direction: column;
+          padding: 0rem 0rem 4rem;
+        }
+
         img {
           margin-right: 4rem;
+
+          @media (max-width: $mobileLarge) {
+            margin-right: 0;
+            margin-bottom: 2rem;
+          }
         }
 
         .article-link__container {
@@ -98,6 +128,11 @@
           .news-post-cta {
             align-self: flex-start;
             margin-left: auto;
+
+            @media (max-width: $mobileLarge) {
+              margin-left: 0;
+              margin-top: 2rem;
+            }
           }
         }
       }

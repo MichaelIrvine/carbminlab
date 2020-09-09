@@ -19,7 +19,7 @@ get_header();
 
   <div class="half-screen-hero__inner-container">
     <div class="half-screen-hero__column-one">
-      <h1>
+      <h1 class="<?php if (!empty(get_field('hst-hero-image', 'option'))) : ?>light-color<?php endif; ?>">
         <?php echo post_type_archive_title(); ?>
       </h1>
     </div>
@@ -70,7 +70,9 @@ get_header();
 
     <div class="article__container">
       <div class="article__container__row-1">
-        <h3><?php the_title(); ?></h3>
+        <a href="<?= the_permalink(); ?>">
+          <h2><?php the_title(); ?></h2>
+        </a>
         <div class="post-details__container">
           <span class="post-category"><?php the_category(', '); ?></span>
           <span class="post-date"><?= get_the_date(); ?></span>

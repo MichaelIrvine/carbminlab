@@ -1,2 +1,6 @@
 @import './typography';
 @import './elements/elements';
+
+* > a:focus {
+  outline: thin dotted black;
+}

@@ -8,4 +8,8 @@ const gallerySwiper = new Swiper('.swiper-container', {
   },
   updateOnWindowResize: true,
   initialSlide: 0,
+  a11y: {
+    prevSlideMessage: 'Previous slide',
+    nextSlideMessage: 'Next slide',
+  },
 });

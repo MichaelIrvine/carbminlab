@@ -5,6 +5,9 @@
   a {
     font-size: 15px;
 
+    @media (max-width: $tablet) {
+      font-size: 1.25rem;
+    }
     @media (max-width: $desktopSmall) {
       margin: 0.5rem 0;
     }
@@ -163,7 +166,9 @@
         text-align: center;
 
         .search-field {
-          -webkit-appearance: none;
+          -webkit-appearance: none !important;
+          appearance: none;
+          border-radius: 0;
           border: 0;
           border-bottom: 1px solid $lightgrey;
           background-color: white;
@@ -180,6 +185,8 @@
         }
 
         .search-submit {
+          -webkit-appearance: none !important;
+          appearance: none;
           padding: 0.5rem 1.5rem;
           border-radius: 50px;
           border: 1px solid white;
@@ -283,6 +290,7 @@ ul.sub-menu {
   border-top: 1px solid white;
   z-index: 9999;
   flex-direction: column;
+  width: 178px;
 
   @media (max-width: $desktopSmall) {
     position: relative;
@@ -290,6 +298,7 @@ ul.sub-menu {
     flex-direction: row;
     top: 0 !important;
     border: 0;
+    width: auto;
   }
 }
 

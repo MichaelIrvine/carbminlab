@@ -1,3 +1,7 @@
 .wp-block-interactive-geo-maps-display-map {
   padding: 3rem;
+
+  @media (max-width: $mobileLarge) {
+    padding: 0;
+  }
 }

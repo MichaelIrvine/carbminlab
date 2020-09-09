@@ -23,22 +23,21 @@ get_header();
 
   <div class="half-screen-hero__inner-container">
     <div class="half-screen-hero__column-one">
-      <h1>
+      <h1 class="<?php if (!empty(get_field('hst-hero-image'))) : ?>light-color<?php endif; ?>">
         <?php echo the_title(); ?>
+        <?php
+        if (!empty(the_field('hst_subtitle'))) :
+          echo the_field('hst_subtitle');
+        endif; ?>
       </h1>
     </div>
     <div class="half-screen-hero__column-two">
 
       <?php
       $icon = get_field('hst_column_2_icon');
-      $icon_desc = get_field('hst_column_2_icon_desc');
+
       if (!empty($icon)) : ?>
       <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
-      <?php endif; ?>
-
-      <?php
-      if (!empty($icon_desc)) : ?>
-      <?php echo $icon_desc; ?>
       <?php endif; ?>
     </div>
   </div>
