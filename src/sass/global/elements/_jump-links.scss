@@ -1,0 +1,8 @@
+.jump-link:before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 0;
+  height: 5em;
+  margin-top: -5em;
+}

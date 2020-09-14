@@ -10,7 +10,14 @@
     display: flex;
     justify-content: space-between;
     background-color: $darkblue;
-    padding: 5rem 3rem 3rem;
+    padding: 3rem;
+
+    @media (max-width: $tablet) {
+      padding: 2rem;
+    }
+    @media (max-width: $mobileMed) {
+      padding: 1rem;
+    }
 
     @media (max-width: $mobileLarge) {
       flex-direction: column;
