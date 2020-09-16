@@ -293,3 +293,71 @@ function carbmin_op_init()
 }
 
 add_action('acf/init', 'carbmin_op_init');
+
+// Custom ACF Blocks
+
+if (function_exists('acf_register_block_type')) {
+	add_action('acf/init', 'register_acf_block_types');
+};
+
+function register_acf_block_types()
+{
+	acf_register_block_type(
+		array(
+			'name'              => 'carbmin-divider',
+			'title'             => __('Carbmin Divider'),
+			'description'       => __('A custom divider block.'),
+			'render_template'   => 'template-parts/blocks/carbmin-divider/carbmin-divider.php',
+			'category'          => 'design',
+			'icon' 							=> 'minus',
+			'keywords' 					=> array('divider, carbmin'),
+			'enqueue_assets' 	  => function () {
+				wp_enqueue_style('carbmin-divider', get_template_directory_uri() . '/template-parts/blocks/carbmin-divider/carbmin-divider.css', array(), '1.0.1');
+			},
+		)
+	);
+};
+
+
+/**
+ * ACF Color Palette
+ *
+ * Add default color palatte to ACF color picker for branding
+ * Match these colors to colors in /functions.php & /assets/scss/partials/base/variables.scss
+ *
+ */
+add_action('acf/input/admin_footer', 'wd_acf_color_palette');
+function wd_acf_color_palette()
+{ ?>
+<script type="text/javascript">
+(function($) {
+  acf.add_filter('color_picker_args', function(args, $field) {
+    // add the hexadecimal codes here for the colors you want to appear as swatches
+    args.palettes = ['#ffffff', '#000000', '#00A8E1', '#00053E', '#e2e2e2'];
+    // return colors
+    return args;
+  });
+})(jQuery);
+</script>
+<?php }
+
+// Get ACF Values from color picker
+$wd_acf_color_picker_values = get_field('divider_color');
+
+// Set array of color classes (for block editor) and hex codes (from ACF)
+$wd_block_colors = [
+
+	"white"         => "#ffffff",
+	"black"  				=> "#000000",
+	"light-blue" 		=> "#00A8E1",
+	"dark-blue"     => "#00053E",
+	"light-grey"    => "#E2E2E2",
+
+];
+
+// Loop over colors array and set proper class if background color selection matches value
+foreach ($wd_block_colors as $key => $value) {
+	if ($wd_acf_color_picker_values == $value) {
+		$wd_color_class = $key;
+	}
+}

@@ -3,7 +3,7 @@
   .ptam-post-grid-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 2rem;
+    grid-gap: 6rem;
 
     .ptam-block-post-grid-text {
       .ptam-block-post-grid-title {
@@ -29,7 +29,7 @@
   .ptam-post-grid-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 3rem;
+    grid-gap: 6rem;
 
     .ptam-block-post-grid-text {
       .ptam-block-post-grid-title {
@@ -42,7 +42,7 @@
           font-size: inherit;
 
           &:hover {
-            opacity: 0.4;
+            color: $lightblue;
           }
         }
 
@@ -51,7 +51,7 @@
         }
       }
 
-      .ptam-block-post-custom-fields > p {
+      .ptam-block-post-custom-fields span {
         margin: 0;
       }
 

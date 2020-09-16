@@ -1,10 +1,12 @@
 .wp-block-advgb-columns.advgb-columns-wrapper {
   @include customPadding;
+  margin: 3rem 0;
 
   .advgb-columns-container {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    border-bottom: 1px solid $lightgrey;
+    height: 100%;
+    // border-bottom: 1px solid $lightgrey;
 
     @media (max-width: $mobileLarge) {
       padding-top: 1.5rem;
@@ -30,16 +32,16 @@
   background-color: white;
 }
 
-.wp-block-advgb-columns.advgb-columns-wrapper.no-bottom-border {
-  .advgb-columns-container {
-    border: none;
-  }
-}
+// .wp-block-advgb-columns.advgb-columns-wrapper.no-bottom-border {
+//   .advgb-columns-container {
+//     border: none;
+//   }
+// }
 
-.wp-block-advgb-columns.advgb-columns-wrapper.border-top-bottom {
-  .advgb-columns-container {
-    border: 1px solid $darkblue;
-    border-left: none;
-    border-right: none;
-  }
-}
+// .wp-block-advgb-columns.advgb-columns-wrapper.border-top-bottom {
+//   .advgb-columns-container {
+//     border: 1px solid $darkblue;
+//     border-left: none;
+//     border-right: none;
+//   }
+// }
