@@ -1,17 +1,17 @@
+.wp-block-advgb-columns + .wp-block-advgb-columns {
+  @include customMargin;
+}
+
+// For blocks with solid color background
+.has-solid-background > .advgb-columns-container {
+  padding: 3rem 0;
+}
+
 .wp-block-advgb-columns.advgb-columns-wrapper {
   @include customPadding;
-  margin: 3rem 0;
 
   .advgb-columns-container {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
     height: 100%;
-    // border-bottom: 1px solid $lightgrey;
-
-    @media (max-width: $mobileLarge) {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
   }
 }
 
@@ -32,16 +32,11 @@
   background-color: white;
 }
 
-// .wp-block-advgb-columns.advgb-columns-wrapper.no-bottom-border {
-//   .advgb-columns-container {
-//     border: none;
-//   }
-// }
-
-// .wp-block-advgb-columns.advgb-columns-wrapper.border-top-bottom {
-//   .advgb-columns-container {
-//     border: 1px solid $darkblue;
-//     border-left: none;
-//     border-right: none;
-//   }
-// }
+// Block style for sidebar template
+.template__hero-sidebar.no-sidebar
+  .wp-block-advgb-columns.advgb-columns-wrapper {
+  @include customPadding;
+}
+.template__hero-sidebar .wp-block-advgb-columns.advgb-columns-wrapper {
+  @include customPaddingSidebar;
+}

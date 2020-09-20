@@ -30,7 +30,7 @@ get_header();
     </div>
   </div>
 </div>
-<main id="primary" class="site-main gallery-page">
+<main id="primary" class="site-main gallery-page default-page-template">
 
   <?php
   while (have_posts()) :

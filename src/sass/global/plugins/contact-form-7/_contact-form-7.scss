@@ -1,6 +1,6 @@
 .wpcf7 {
-  display: flex;
-  justify-content: center;
+  padding: 3rem;
+  background-color: #f9f9f9;
 
   .wpcf7-form {
     max-width: 100%;
@@ -18,14 +18,13 @@
       border: 1px solid $darkblue;
       -webkit-appearance: none;
       appearance: none;
-      resize: none;
+      // resize: none;
       max-width: 100%;
 
       &:focus {
         border-radius: 0;
         border: 1px solid $darkblue;
         outline: none;
-        background-color: #fafafa;
       }
     }
   }

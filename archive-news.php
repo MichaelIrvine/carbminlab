@@ -79,10 +79,11 @@ get_header();
         </div>
       </div>
       <div class="article-container__row-2">
-
-        <?php
-          the_post_thumbnail('medium');
-          ?>
+        <a href="<?= the_permalink(); ?>" class="feature-image-link">
+          <?php
+            the_post_thumbnail('full');
+            ?>
+        </a>
         <div class="article-link__container">
           <?php the_excerpt(); ?>
           <a href="<?= the_permalink(); ?>" class="news-post-cta btn --outline">Read More</a>

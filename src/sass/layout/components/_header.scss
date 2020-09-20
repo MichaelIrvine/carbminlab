@@ -19,7 +19,7 @@
     background-color: white;
     border-bottom: 1px solid $lightgrey;
 
-    @include customPadding;
+    @include customPaddingSidebar;
 
     .site-branding {
       flex: 1;

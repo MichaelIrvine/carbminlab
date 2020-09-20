@@ -316,6 +316,20 @@ function register_acf_block_types()
 			},
 		)
 	);
+	acf_register_block_type(
+		array(
+			'name'              => 'carbmin-logo-grid',
+			'title'             => __('Carbmin Custom Logo Grid'),
+			'description'       => __('A custom block to add logos.'),
+			'render_template'   => 'template-parts/blocks/carbmin-logo-grid/carbmin-logo-grid.php',
+			'category'          => 'design',
+			'icon' 							=> 'grid-view',
+			'keywords' 					=> array('logo-grid, carbmin'),
+			'enqueue_assets' 	  => function () {
+				wp_enqueue_style('carbmin-logo-grid', get_template_directory_uri() . '/template-parts/blocks/carbmin-logo-grid/carbmin-logo-grid_style.css', array(), '1.0.1');
+			},
+		)
+	);
 };
 
 
@@ -340,24 +354,3 @@ function wd_acf_color_palette()
 })(jQuery);
 </script>
 <?php }
-
-// Get ACF Values from color picker
-$wd_acf_color_picker_values = get_field('divider_color');
-
-// Set array of color classes (for block editor) and hex codes (from ACF)
-$wd_block_colors = [
-
-	"white"         => "#ffffff",
-	"black"  				=> "#000000",
-	"light-blue" 		=> "#00A8E1",
-	"dark-blue"     => "#00053E",
-	"light-grey"    => "#E2E2E2",
-
-];
-
-// Loop over colors array and set proper class if background color selection matches value
-foreach ($wd_block_colors as $key => $value) {
-	if ($wd_acf_color_picker_values == $value) {
-		$wd_color_class = $key;
-	}
-}

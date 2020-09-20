@@ -1,9 +1,18 @@
-.carbmin-custom-acf-block {
-  padding: 0 3rem;
+.carbmin-custom-divider-block {
+  padding: 0 6rem;
+  margin: 3rem 0;
 }
 
 .cb-divider {
   width: 100%;
   height: 1px;
   display: block;
+}
+
+.carbmin-custom-divider-block.is-admin {
+  padding: 3rem;
+}
+
+.template__hero-sidebar .carbmin-custom-divider-block {
+  padding: 0 3rem;
 }

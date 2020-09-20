@@ -51,9 +51,8 @@
       .social-media-button-container {
         text-align: right;
 
-        .sow-social-media-button {
-          background-color: transparent;
-          border: none;
+        a {
+          font-size: 1.5rem;
         }
       }
     }

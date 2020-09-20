@@ -21,11 +21,14 @@ if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 
+if ($is_preview) {
+  $className .= ' is-admin';
+}
+
 ?>
 
-<div id="<?php echo esc_attr($id); ?>" class="carbmin-custom-acf-block ">
-  <div class="cb-divider <?php echo esc_attr($className); ?> has-<?php echo $wd_color_class; ?>-color"
-    style="background-color:<?php the_field('divider_color'); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="carbmin-custom-divider-block <?php echo esc_attr($className); ?>">
+  <div class="cb-divider" style="background-color:<?php the_field('divider_color'); ?>">
 
   </div>
 </div>

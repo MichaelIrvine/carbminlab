@@ -5,6 +5,10 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 6rem;
 
+    @media (max-width: $mobileLarge) {
+      grid-gap: 3rem;
+    }
+
     .ptam-block-post-grid-text {
       .ptam-block-post-grid-title {
         font-size: 1.25rem;

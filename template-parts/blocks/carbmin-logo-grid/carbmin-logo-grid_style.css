@@ -1,0 +1,28 @@
+.carbmin-custom-logo-grid-block {
+  margin: 3rem 0;
+}
+
+.custom_logo_grid {
+  width: 100%;
+  display: grid;
+  grid-gap: 3rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.carbmin-custom-logo-grid-block.is-admin .custom_logo_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  grid-gap: 3rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.template__hero-sidebar .carbmin-custom-logo-grid-block {
+  padding: 0 3rem;
+}
+
+.custom_logo_grid.is-grayscale img {
+  filter: grayscale(1);
+}
