@@ -74,7 +74,7 @@ get_header();
           <h2><?php the_title(); ?></h2>
         </a>
         <div class="post-details__container">
-          <span class="post-category"><?php the_category(', '); ?></span>
+          <span class="post-category"><?php the_category(' '); ?></span>
           <span class="post-date"><?= get_the_date(); ?></span>
         </div>
       </div>

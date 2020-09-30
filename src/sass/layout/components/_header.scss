@@ -83,11 +83,15 @@
           cursor: pointer;
 
           &:hover > a {
-            opacity: 0.4;
+            color: $lightblue;
           }
 
           a {
             border-bottom: 1px solid transparent;
+            font-size: 1rem;
+            font-weight: 100;
+            font-family: $roboto, 'Arial', 'Helvetica', sans-serif;
+            text-decoration: none;
 
             &:focus {
               outline: 1px dotted $black;

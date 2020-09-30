@@ -330,6 +330,26 @@ function register_acf_block_types()
 			},
 		)
 	);
+	acf_register_block_type(
+		array(
+			'name'              => 'carbmin-logo-grid-carousel',
+			'title'             => __('Carbmin Custom Logo Grid Carousel'),
+			'description'       => __('A custom block to add logos inside a carousel.'),
+			'render_template'   => 'template-parts/blocks/carbmin-logo-grid-carousel/carbmin-logo-grid-carousel.php',
+			'category'          => 'design',
+			'icon' 							=> 'images-alt2',
+			'keywords' 					=> array('logo-grid, carbmin'),
+			'enqueue_assets' 	  => function () {
+
+				wp_enqueue_style('carbmin-logo-grid-carousel-style', get_template_directory_uri() . '/template-parts/blocks/carbmin-logo-grid-carousel/carbmin-logo-grid-carousel_style.css', array(), '1.0.0', false);
+				wp_enqueue_script('carbmin-logo-grid-carousel', get_template_directory_uri() . '/template-parts/blocks/carbmin-logo-grid-carousel/carbmin-logo-grid-carousel.js', array(), '1.0.0', true);
+
+				wp_enqueue_style('slick', 'http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '1.8.1', false);
+				wp_enqueue_style('slick-theme', 'http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', array(), '1.8.1', false);
+				wp_enqueue_script('slick', 'http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array(), '1.8.1', true);
+			},
+		)
+	);
 };
 
 

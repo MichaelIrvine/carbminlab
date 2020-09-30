@@ -3,6 +3,10 @@
 }
 
 // For blocks with solid color background
+.wp-block-advgb-columns.has-solid-background {
+  padding: 0 3rem;
+}
+
 .has-solid-background > .advgb-columns-container {
   padding: 3rem 0;
 }
@@ -30,6 +34,7 @@
 
 .wp-block-advgb-columns.advgb-columns-wrapper.has-solid-background h2:after {
   background-color: white;
+  width: 100%;
 }
 
 // Block style for sidebar template

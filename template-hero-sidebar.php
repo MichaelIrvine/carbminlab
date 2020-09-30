@@ -48,7 +48,14 @@ get_header();
 ">
   <?php if (have_rows('hst_sidebar_menu')) : ?>
   <aside class="sidebar--jump-links__container">
-    <h4 class="hst_sidebar-header">On This Page:</h4>
+
+    <?php if (!empty(get_field('sidebar_jump_links_title'))) : ?>
+    <h4 class="hst_sidebar-header">
+      <?php
+          echo the_field('sidebar_jump_links_title');
+          ?>
+    </h4>
+    <?php endif; ?>
     <ul class="hst_sidebar_menu">
       <?php while (have_rows('hst_sidebar_menu')) : the_row();
           $linkTitle = get_sub_field('hst_sidebar_menu_item');

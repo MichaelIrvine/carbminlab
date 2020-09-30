@@ -1,6 +1,13 @@
 .carbmin-custom-divider-block {
   padding: 0 6rem;
-  margin: 3rem 0;
+  margin: 6rem 0;
+}
+
+@media (max-width: 600px) {
+  .carbmin-custom-divider-block {
+    margin: 3rem 0;
+    padding: 0 3rem;
+  }
 }
 
 .cb-divider {

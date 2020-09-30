@@ -2,6 +2,10 @@
 @mixin customPadding {
   padding: $paddingLargeWide;
 
+  @media (min-width: $desktopXLarge) {
+    padding: $paddingXLargeWide;
+  }
+
   @media (max-width: $tablet) {
     padding: $paddingMedWide;
   }
@@ -12,6 +16,10 @@
 @mixin customPaddingSidebar {
   padding: $paddingLarge;
 
+  @media (min-width: $desktopXLarge) {
+    padding: $paddingXLarge;
+  }
+
   @media (max-width: $tablet) {
     padding: $paddingMed;
   }
@@ -21,7 +29,11 @@
 }
 
 @mixin customMargin {
-  margin: $marginLarge;
+  margin: $marginXLarge;
+
+  @media (max-width: $desktopLarge) {
+    margin: $marginLarge;
+  }
 
   @media (max-width: $tablet) {
     margin: $marginMed;

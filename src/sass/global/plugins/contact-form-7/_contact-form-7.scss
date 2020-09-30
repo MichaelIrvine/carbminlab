@@ -1,6 +1,6 @@
 .wpcf7 {
-  padding: 3rem;
-  background-color: #f9f9f9;
+  padding-right: 3rem;
+  margin-bottom: 5rem;
 
   .wpcf7-form {
     max-width: 100%;
@@ -15,17 +15,35 @@
     select,
     textarea {
       border-radius: 0;
-      border: 1px solid $darkblue;
+      border: 1px solid #adadad;
       -webkit-appearance: none;
       appearance: none;
-      // resize: none;
-      max-width: 100%;
+      resize: none;
+      padding: 10px;
 
       &:focus {
         border-radius: 0;
-        border: 1px solid $darkblue;
-        outline: none;
+        border: 1px solid $lightblue;
+        outline: 1px solid $lightblue;
       }
+    }
+
+    input {
+      width: 50%;
+    }
+
+    textarea {
+      width: 100%;
+
+      @media (min-width: $desktopLarge) {
+        width: 50%;
+      }
+    }
+
+    select {
+      width: 50%;
+      // From User Agent Stylesheet
+      color: rgb(117, 117, 117);
     }
   }
 

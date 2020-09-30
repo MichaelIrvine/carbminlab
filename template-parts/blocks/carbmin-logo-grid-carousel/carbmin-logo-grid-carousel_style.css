@@ -1,0 +1,67 @@
+.carbmin-logo-grid-carousel {
+  overflow: hidden;
+}
+
+.carbmin-logo-grid-carousel .slick-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (max-width: 600px) {
+  .carbmin-logo-grid-carousel .slick-list {
+    min-height: 200px;
+  }
+}
+
+.carbmin-logo-grid-carousel.is-grayscale img {
+  filter: grayscale(1);
+}
+
+.logo_carousel_slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo_carousel_slide img {
+  max-height: 200px;
+  width: auto;
+  margin-right: 3rem;
+}
+
+.logo_carousel_slide img:last-of-type {
+  margin-right: 0;
+}
+
+.carbmin-logo-grid-carousel.is-admin:before {
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  position: absolute;
+  z-index: 1;
+}
+
+.slick-button-prev {
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #e2e2e2;
+}
+.slick-button-next {
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #e2e2e2;
+}
+.slick-button-prev svg {
+  width: 20px;
+  height: 20px;
+}
+.slick-button-next svg {
+  width: 20px;
+  height: 20px;
+}
