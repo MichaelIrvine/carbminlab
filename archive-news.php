@@ -29,7 +29,7 @@ get_header();
 
 <main id="primary" class="site-main archive-page__news">
   <div class="categories-filter__container">
-    <h2>Filter</h2>
+
     <?php echo the_field('news_archive_filter_desc', 'option'); ?>
     <ul class="categories-filter__list">
       <li class="category-filter__item"><a class="current-active-category" href="<?php echo home_url('news') ?>">All

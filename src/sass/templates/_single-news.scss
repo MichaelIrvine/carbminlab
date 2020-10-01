@@ -1,9 +1,14 @@
 .single-news-page {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  min-height: 75vh;
 
   @media (max-width: $tablet) {
     grid-template-columns: 1fr;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   section {
@@ -52,6 +57,7 @@
           color: $darkblue;
           background-color: white;
           border-color: $darkblue;
+          text-decoration: none;
 
           &:hover {
             background-color: $darkblue;

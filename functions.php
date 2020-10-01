@@ -318,20 +318,6 @@ function register_acf_block_types()
 	);
 	acf_register_block_type(
 		array(
-			'name'              => 'carbmin-logo-grid',
-			'title'             => __('Carbmin Custom Logo Grid'),
-			'description'       => __('A custom block to add logos.'),
-			'render_template'   => 'template-parts/blocks/carbmin-logo-grid/carbmin-logo-grid.php',
-			'category'          => 'design',
-			'icon' 							=> 'grid-view',
-			'keywords' 					=> array('logo-grid, carbmin'),
-			'enqueue_assets' 	  => function () {
-				wp_enqueue_style('carbmin-logo-grid', get_template_directory_uri() . '/template-parts/blocks/carbmin-logo-grid/carbmin-logo-grid_style.css', array(), '1.0.1');
-			},
-		)
-	);
-	acf_register_block_type(
-		array(
 			'name'              => 'carbmin-logo-grid-carousel',
 			'title'             => __('Carbmin Custom Logo Grid Carousel'),
 			'description'       => __('A custom block to add logos inside a carousel.'),

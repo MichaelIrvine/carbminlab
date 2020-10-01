@@ -26,15 +26,16 @@ function filter_ajax()
       <h2><?php the_title(); ?></h2>
     </a>
     <div class="post-details__container">
-      <span class="post-category"><?php the_category(', '); ?></span>
+      <span class="post-category"><?php the_category(' '); ?></span>
       <span class="post-date"><?= get_the_date(); ?></span>
     </div>
   </div>
   <div class="article-container__row-2">
-
-    <?php
-        the_post_thumbnail('medium');
-        ?>
+    <a href="<?= the_permalink(); ?>" class="feature-image-link">
+      <?php
+          the_post_thumbnail('full');
+          ?>
+    </a>
     <div class="article-link__container">
       <?php the_excerpt(); ?>
       <a href="<?= the_permalink(); ?>" class="news-post-cta btn --outline">Read More</a>

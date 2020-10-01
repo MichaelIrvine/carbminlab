@@ -1,6 +1,7 @@
 .team-member-page {
+  min-height: 75vh;
   @include customPadding;
-  margin-top: 3rem;
+  margin-top: 6rem;
 
   .team-member__container {
     display: flex;

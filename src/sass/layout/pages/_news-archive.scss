@@ -28,6 +28,8 @@
           opacity: 1;
           color: white;
           font-size: 1rem;
+          font-weight: 100;
+          text-decoration: none;
           cursor: pointer;
           background-color: $lightblue;
           border: 1px solid $lightblue;
@@ -66,6 +68,10 @@
           padding: 0;
         }
 
+        a {
+          text-decoration: none;
+        }
+
         h2:hover {
           color: $lightblue;
         }
@@ -81,6 +87,8 @@
           .post-category a {
             margin-right: 1rem;
             font-size: 0.75rem;
+            font-weight: 100;
+            text-decoration: none;
             background-color: #00a8e1;
             padding: 0.25rem 1rem;
             border-radius: 16px;
@@ -127,6 +135,11 @@
           p {
             margin: 0;
             flex: 1;
+          }
+
+          a {
+            text-decoration: none;
+            font-weight: 100;
           }
 
           .news-post-cta {

@@ -72,6 +72,11 @@ function carbminlab_gutenberg_defaults()
         'size' => 16
       ),
       array(
+        'name' => 'Large Paragraph',
+        'slug' => 'large-paragraph',
+        'size' => 22
+      ),
+      array(
         'name' => 'Large',
         'slug' => 'large',
         'size' => 24
