@@ -17,6 +17,9 @@
       margin-top: 4rem;
       border-left: 1px solid $lightgrey;
 
+      display: flex;
+      flex-direction: column;
+
       @media (max-width: $tablet) {
         border: 0;
       }
@@ -71,7 +74,7 @@
 
   aside {
     margin-top: 4rem;
-    @include customPadding;
+    padding: 0rem 3rem;
 
     @media (max-width: $tablet) {
       margin-top: 2rem;

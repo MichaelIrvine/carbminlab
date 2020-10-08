@@ -52,7 +52,9 @@ get_header();
 
       <div class="swiper-slide">
         <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <p><?php echo esc_html($image['caption']); ?></p>
+
+        <!-- <p><?php echo esc_html($image['caption']); ?></p> -->
+        <p style="max-width: 325px; margin: 1rem auto"><?php echo esc_html($image['caption']); ?></p>
       </div>
       <?php endforeach; ?>
     </div>

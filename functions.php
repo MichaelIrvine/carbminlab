@@ -190,7 +190,7 @@ add_action('widgets_init', 'carbminlab_theme_widgets_init');
  */
 function carbminlab_theme_scripts()
 {
-	wp_enqueue_style('main-styles', get_template_directory_uri() . '/build/main.css', array(), get_the_time(), false);
+	wp_enqueue_style('main-styles', get_template_directory_uri() . '/build/main.css', array(), false);
 	wp_enqueue_style('swiper-styles', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css', array(), get_the_time(), false);
 	wp_enqueue_script('swiper-script', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js', array(), get_the_time(), true);
 

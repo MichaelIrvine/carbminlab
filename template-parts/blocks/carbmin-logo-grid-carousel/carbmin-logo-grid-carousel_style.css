@@ -35,8 +35,7 @@
   margin-right: 0;
 }
 
-@media (max-width: 400px) {
-}
+@media (max-width: 400px) {}
 
 @media (max-width: 400px) {
   .logo_carousel_slide img {
@@ -58,14 +57,14 @@
 /* Carousel Navigation */
 
 .slick-arrow:focus {
-  background-color: #e2e2e2;
+  background-color: #00a8e1;
 }
 
 .slick-button-prev {
   display: flex;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #e2e2e2;
+  background-color: #00a8e1;
   position: absolute;
   bottom: 0;
   left: 20%;
@@ -76,7 +75,7 @@
   display: flex;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #e2e2e2;
+  background-color: #00a8e1;
   position: absolute;
   bottom: 0;
   right: 20%;
